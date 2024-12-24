@@ -1,0 +1,458 @@
+/* ************DEFAULTS********** */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #FFFFFF;
+    font-family: "Playfair Display", serif;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    font-size: 17px;
+    color: inherit;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgba(128, 128, 128, 0.365);
+}
+
+hr {
+    margin: 0 20px;
+}
+
+.hide {
+    display: none;
+}
+
+
+h1,
+h2 {
+    font-family: "Roboto", serif;
+    color: grey;
+}
+
+header * {
+    color: white;
+}
+
+/* *********************member HEADER*************************** */
+
+header .member-menu-toggle {
+    display: none;
+}
+
+header .header-container {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    background: #65a3ea;
+    height: 66px;
+}
+
+header .logo {
+    position: absolute;
+    float: left;
+    height: inherit;
+    margin-left: 2em;
+}
+
+
+header .logo-text {
+    margin: 9px;
+    font-family: "Roboto", serif;
+}
+
+header .logo-text span {
+    color: black;
+}
+
+header .user {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin-left: auto;
+}
+
+header .user li {
+    float: left;
+    position: relative;
+
+}
+
+header .user li a {
+    display: block;
+    padding: 15px;
+    font-size: 1.1em;
+    text-decoration: none;
+    list-style: none;
+}
+
+header .user li a:hover {
+    background: #427fc5;
+    transition: 0.5s;
+    text-decoration: none;
+    color: white;
+}
+
+
+header .user li .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    display: none;
+    z-index: 88888;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+header .user li:hover .dropdown {
+    display: block;
+    width: 100%;
+}
+
+header .user li .dropdown li {
+    width: 100%;
+    list-style: none;
+}
+
+header .user li .dropdown li a {
+    background-color: white;
+    padding: 6px;
+    color: black;
+    display: block;
+}
+
+header .user li .dropdown li a:hover {
+    background: #4171a7;
+    transition: 0.9s;
+    width: 100%;
+}
+
+header .user li .dropdown li a.logout {
+    color: red;
+}
+
+/* *****************member CONTAINER*************************** */
+
+.member-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 66px);
+
+}
+
+.label-user{
+    font-size: 20px;
+    color: rgb(27, 27, 70);
+}
+.form-user{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.member-side-wrapper {
+    flex: 1;
+    background-color: #5189c9;
+    height: auto;
+    overflow: hidden;
+}
+
+/* *********************member DASHBOARD********************** */
+
+.member-side-overlay {
+    display: none;
+}
+
+.member-side-wrapper .member-menu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 35px;
+
+}
+
+.member-side-wrapper .member-menu li {
+    border-bottom: 2px solid #4472a7;
+    color: rgb(0, 0, 0);
+}
+
+.member-side-wrapper .member-menu li a {
+    display: block;
+    font-size: 16px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.member-side-wrapper .member-menu li a .member-dash-icon {
+    margin-right: 8px;
+}
+
+.member-side-wrapper .member-menu li a .member-menu-chevron {
+    position: absolute;
+    right: 15px;
+}
+
+.member-side-wrapper .member-menu li a:hover {
+    background-color: #376ba6;
+    transform: scale(1.1);
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+}
+
+.member-page-title {
+    margin: 10px;
+    text-align: center;
+}
+
+
+
+/*********** member buttons ***********/
+
+.member-container .member-content .member-page-manage {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+
+}
+
+.member-container .member-content .member-page-manage .member-page-actions {
+    flex: 2;
+}
+
+.member-container .member-content .member-page-manage .btn-manage {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+
+}
+
+.primary-btn {
+    margin-top: 5px;
+    background-color: #65a3ea;
+
+}
+
+.deleted-btn {
+    margin-top: 5px;
+    background-color: rgba(210, 33, 33, 0.74);
+
+}
+
+.btn:hover {
+    background-color: #466c97b3;
+
+}
+
+/* *****member CONTENT*** */
+
+.member-content {
+    flex: 3;
+    background-color: white;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.member-content .content {
+    padding: 13px;
+    margin: 60px 20px;
+    background-color: #ebeff3;
+}
+
+.member-content .content .member-post-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.btn-image {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+/* ********USER FORM******* */
+
+
+.form-publish .input-label {
+    width: 100%;
+    height: 40px;
+}
+
+/*********** member table **********/
+
+.member-table {
+    background-color: #ebeff3;
+    margin: 0px 15px 0px 15px;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.member-table .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.member-table .table-container table thead {
+    background: #65a3ea;
+    width: 100%;
+    color: white;
+
+}
+
+th,
+td {
+    padding: 10px;
+
+}
+
+tr {
+    border-bottom: 1px solid #6089b7;
+}
+
+/* Table page-number */
+
+.pagination {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.move-btn {
+    border: 1px solid #65a3ea;
+    background-color: white;
+}
+
+.page-number .link-page {
+    font-size: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 5px 9px;
+    min-width: 20px;
+}
+
+.page-number .link-page.active {
+    border: 1px solid white;
+    background-color: #65a3ea;
+    color: white;
+
+}
+
+/* ***************ACTION LINKS(delete/edit)************** */
+
+.action-link {
+    font-size: 14px;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+/* ************* MESSAGES ************* */
+
+.message {
+    width: 100%;
+    list-style: none;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    border: 1px solid rgb(129, 35, 35);
+    background: rgb(247, 181, 181);
+}
+
+.success-message {
+    border: 1px solid rgb(129, 107, 35);
+    background: rgb(252, 239, 162);
+}
+
+@media only screen and (max-width: 750px) {
+
+    header .member-menu-toggle {
+        display: block;
+        font-size: 1.9em;
+    }
+
+    .member-container {
+        display: block;
+
+    }
+
+    .member-side-wrapper .member-side-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #427fc5;
+        overflow: hidden;
+        height: 100%;
+        width: 200px;
+        z-index: 99999;
+        transform: translateX(-200px);
+    }
+
+    .member-side-wrapper .member-side-bar.open {
+        transform: translateX(0px);
+        transition: all 0.25s ease-in-out;
+    }
+
+    .member-side-overlay.open {
+        display: block;
+        position: fixed;
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.372);
+        z-index: 2;
+    }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    .member-container .member-content .member-page-manage {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        align-items: center;
+
+    }
+
+
+    .member-container .member-content .member-page-manage .member-page-actions {
+        flex: 2;
+    }
+
+    .member-container .member-content .member-page-manage .btn-manage {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 50%;
+        max-width: 200px;
+    }
+
+
+}
