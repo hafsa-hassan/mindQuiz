@@ -35,9 +35,6 @@ MindQuiz is a web-based quiz application that fetches trivia questions from an A
 - Enable quiz result history storage
 - Allow question contributions
 
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
