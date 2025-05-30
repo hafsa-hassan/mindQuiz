@@ -1,0 +1,47 @@
+# MindQuiz
+
+MindQuiz is a web-based quiz application that fetches trivia questions from an API and allows users to play, track scores, and manage their own quiz categories.
+
+## Features
+
+- User authentication (register/login)
+- Create and manage personal quiz categories
+- Fetch trivia questions from an external API
+- Track quiz results
+- Admin/user panel separation
+- Responsive UI with Bootstrap
+
+## Tech Stack
+
+- **Frontend**: HTML, CSS (Bootstrap), JavaScript, jQuery
+- **Backend**: PHP
+- **Database**: MySQL
+- **Hosting**: InfinityFree (for demo purposes)
+
+
+## Screenshots
+
+![Screenshot 2025-05-30 182404](https://github.com/user-attachments/assets/2b9081fd-5dd1-43c6-aba6-23693d13a60e)
+![Screenshot 2025-05-30 182436](https://github.com/user-attachments/assets/75fff202-2402-422b-8591-a1291c274179)
+![Screenshot 2025-05-30 182345](https://github.com/user-attachments/assets/309f3ef1-4cfa-4e38-9028-6308b510ef96)
+![Screenshot 2025-05-30 182452](https://github.com/user-attachments/assets/91df3667-4db5-4a60-ba8c-fe670a2ac45e)
+
+
+
+## TODO / Future Improvements
+
+- Improve mobile responsiveness
+- Add difficulty and timer settings
+- Enable quiz result history storage
+- Allow question contributions
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgments
+
+- [Open Trivia DB API](https://opentdb.com/)
+- Bootstrap & jQuery
