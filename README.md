@@ -23,30 +23,30 @@ MindQuiz is a web-based quiz application that fetches trivia questions from an A
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/mindquiz.git
+   git clone https://github.com/your-username/mindQuiz.git
    ```
 
 2. Move the files into your web server directory:
 
    ```bash
-   sudo cp -r mindquiz/* /opt/htdocs/lamps/
+   sudo cp -r mindQuiz/* /opt/lampp/htdocs/mindQuiz
    ```
 
 3. Import the database:
 
    - Open `phpMyAdmin`
-   - Import the `mindquiz.sql` file (included in the repo)
+   - Import the `mindQuiz.sql` file (included in the repo)
 
 4. Update `path.php` and DB credentials if needed:
 
    ```php
-   define("BASE_URL", "http://localhost/lamps");
-   define("ROOT_PATH", "/opt/htdocs/lamps");
+   define("BASE_URL", "http://localhost/mindQuiz");
+   define("ROOT_PATH", "/opt/lampp/htdocs/mindQuiz");
    ```
 
 5. Make sure your Apache server is running, then access:
    ```
-   http://localhost/lamps
+   http://localhost/mindQuiz
    ```
 
 ## Screenshots
