@@ -1,7 +1,8 @@
-<?php include("path.php");
+<?php 
+include("path.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include(ROOT_PATH . "/app/controllers/categories.php");
-
-
 ?>
 <!doctype html>
 <html>
@@ -32,7 +33,7 @@ include(ROOT_PATH . "/app/controllers/categories.php");
     <div class="menu">
         
         <ul class="navigation">
-            <li><a href="<?php echo BASE_URL . '/home.php' ?>">Home</a></li>
+            <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
             <?php if (isset(($_SESSION['id']))): ?>
                 <li><a href="<?php echo BASE_URL . "/mycategories.php" ?>">My categories</a></li>
             <?php endif; ?>

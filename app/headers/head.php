@@ -2,7 +2,7 @@
     <div class="header-container">
         
         <!-- logo -->
-        <a href="<?php echo BASE_URL . '/home.php' ?>" class="logo">
+        <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
             <h1 class="logo-text"> <span>mind</span>Quiz</h1>
         </a>
         <!-- login -->

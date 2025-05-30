@@ -47,7 +47,7 @@ if (isset($_GET['category_id'])) {
     <div class="menu">
         <ul class="navigation">
             <?php if (isset(($_SESSION['id']))): ?>         
-                    <li><a href="<?php echo BASE_URL . '/home.php' ?>">Home</a></li>
+                    <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
                     <li><a href="<?php echo BASE_URL . '/categories.php' ?>">Categories</a></li>
                     <li><a href="<?php echo BASE_URL . '/mycategories.php' ?>">My Categories</a></li>
             <?php else: ?>        

@@ -14,8 +14,6 @@ $password = '';
 $repassword = '';
 $table = 'users';
 
-
-
 function loginUser($user)
 {
     $_SESSION['id'] = $user['id'];
@@ -23,11 +21,13 @@ function loginUser($user)
     $_SESSION['message'] = 'You are now logged in';
     $_SESSION['type'] = 'success-message';
 
-    header('location: ' . BASE_URL . '/home.php');
+    header('location: ' . BASE_URL . '/index.php');
         exit();
 }
 
-$user = selectOne($table, ['id' => $_SESSION['id']]);
+if (isset($_SESSION['id'])) {
+    $user = selectOne($table, ['id' => $_SESSION['id']]);
+}
 
 if (isset($_GET['id'])) {
     

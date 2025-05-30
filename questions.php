@@ -34,10 +34,10 @@ $selected_category_id = isset($_GET['category_id']) ? $_GET['category_id'] : nul
        
         <ul class="navigation">
             <?php if (isset(($_SESSION['id']))): ?>         
-                    <li><a href="<?php echo BASE_URL . '/home.php' ?>">Home</a></li>
+                    <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
                     <li><a href="<?php echo BASE_URL . '/mycategories.php' ?>">My Categories</a></li>
             <?php else: ?>        
-                    <li><a href="<?php echo BASE_URL . '/home.php' ?>">Home</a></li>
+                    <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
                     <li><a href="<?php echo BASE_URL . '/categories.php' ?>">Categories</a></li>
                     
             <?php endif; ?>
@@ -101,11 +101,17 @@ $selected_category_id = isset($_GET['category_id']) ? $_GET['category_id'] : nul
         var currentIndex = 0; 
         var correctAnswers = 0; 
 
+        function decodeHTMLEntities(text) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = text;
+            return txt.value;
+        }
+
         function loadNextQuestion() {
             if (currentIndex < questions.length) {
                 var currentQuestion = questions[currentIndex];
 
-                var questionText = 'Question ' + (currentIndex + 1) + ': ' + currentQuestion.question + '?';
+                var questionText = 'Question ' + (currentIndex + 1) + ': ' + decodeHTMLEntities(currentQuestion.question);
 
                 $('#questionText').text(questionText);
 
@@ -121,10 +127,10 @@ $selected_category_id = isset($_GET['category_id']) ? $_GET['category_id'] : nul
 
         function showResults() {
             $('#questionForm').hide();
+            $('#questionText').hide();           // Hide question text
             $('#result').show();
             $('#totalQuestions').text(questions.length);
             $('#correctAnswers').text(correctAnswers);
-            $('.question-content').hide();
         }
  
         $.ajax({
@@ -134,11 +140,13 @@ $selected_category_id = isset($_GET['category_id']) ? $_GET['category_id'] : nul
             dataType: 'json',
             success: function(data) {
                 questions = data.results.map(function(question) {
-                    
+                    let allAnswers = [...question.incorrect_answers, question.correct_answer];
+                    allAnswers = allAnswers.sort(() => 0.5 - Math.random());
+
                     return {
                         question: question.question,
-                        choices: question.incorrect_answers.concat(question.correct_answer).sort(),
-                        correct_answer: question.incorrect_answers.length
+                        choices: allAnswers,
+                        correct_answer: allAnswers.indexOf(question.correct_answer)
                     };
                 });
                 loadNextQuestion();
@@ -152,7 +160,8 @@ $selected_category_id = isset($_GET['category_id']) ? $_GET['category_id'] : nul
         $('#nextQuestion').click(function() {
             var selectedAnswer = $('input[name=answer]:checked').val();
             if (selectedAnswer !== undefined) {
-                if (selectedAnswer == questions[currentIndex].correct_answer) {
+                selectedAnswer = parseInt(selectedAnswer); // convert to number
+                if (selectedAnswer === questions[currentIndex].correct_answer) {
                     correctAnswers++;
                 }
                 currentIndex++;

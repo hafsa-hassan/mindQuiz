@@ -1,6 +1,5 @@
 <?php
-
-$host = "localhost";
-$user = "root";
-$pass = "bf9.jx)wHdxEoR(2";
-$db_name = "mindQuiz";
+$host = "sql211.infinityfree.com";
+$user = "if0_39096459";
+$pass = "Yesmal9876";
+$db_name = "if0_39096459_mindQuiz";

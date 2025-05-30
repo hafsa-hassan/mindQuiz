@@ -8,8 +8,12 @@ $errors = array();
 $id = '';
 $name = '';
 
-$user_id = $_SESSION['id']; 
-$categories = selectAll($table, ['user_id' => $user_id]);
+$user_id = isset($_SESSION['id']) ? $_SESSION['id'] : null; 
+if ($user_id) {
+    $categories = selectAll($table, ['user_id' => $user_id]);
+} else {
+    $categories = [];
+}
 
 
 if (isset($_GET['id'])) {
@@ -40,8 +44,6 @@ if (isset($_POST['add-category'])) {
         $name = $_POST['name'];
     }
 }
-
-
 
 if (isset($_POST['update-category'])) {
     userOnly();
